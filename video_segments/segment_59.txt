@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+Technology data—we’ll look at an example of a technology file later. Technology data comes from the technology library, which is provided by the library vendor. This library contains information such as design rules, for example, it might specify that Metal 1 should appear blue with a slanted stipple pattern. It also defines the "look and feel" of the design, including DRC (Design Rule Check) rules. Additionally, the technology data can include details like the height of standard cell rows. All these elements are present in the technology data. Okay, so these are some features of NDM. I think we discussed some of them earlier. Now, regarding the block...

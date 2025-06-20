@@ -1,0 +1,3 @@
+So, let's start by understanding the design setup and floor plan. The objective of this module is to introduce the automatic place-and-route flow and focus on the first phase of this process, which involves design setup and floor planning. After completing this module, you will have a general idea of what makes a good floor plan and gain the knowledge to implement a floor plan at both the chip and block levels.
+
+Our agenda includes reviewing the basic design flow, which we have already touched upon. We will discuss what design setup entails, what a floor plan is, and the differences between block-level and chip-level floor plans. Additionally, we will cover the data required for creating a floor plan.

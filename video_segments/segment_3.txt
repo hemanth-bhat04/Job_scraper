@@ -1,0 +1,3 @@
+Right. Data can only change at the rising edge of the clock because this data is coming from a flip-flop. SerDes uses this principle: when it detects a data transition, it assumes that the corresponding clock transition should occur at that point. To achieve this, SerDes runs an internal oscillator-like mechanism that can be tuned. Based on this, it extracts the clock on its own. This is how SerDes works.  
+
+Now, regarding the timing requirements for a digital hard macro like SerDes, these requirements are extremely complex. The timing requirements for SerDes cannot be fully captured in a Liberty file because Liberty files were originally designed to capture timing information for simple standard cells or gates. This is one of the reasons...

@@ -1,0 +1,3 @@
+That’s just a different database. Supplying the physical data and the logical data into the API tool is called the **data setup**. If you’re working on tools like ICC or even DC, they use a Milkyway database. The Milkyway database comes in two types: the **reference library** and the **design library**.  
+
+The **reference library** is used as a reference, and the data in it is not modified—it’s only used as a reference or linked. For example, the information about an AND gate, as shown here, is stored in the library. The AND gate is a component of the reference library.

@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+We can also discuss the dielectric constant of silicon dioxide. What’s the dielectric constant of the oxide layer present between the poly and the substrate of your transistor? What is the sheet resistance of Metal 1? All that information is defined in the ITF (Interconnect Technology File). Is that clear? Any questions here? Okay, so that’s the ITF. This ITF information is required by the tools.

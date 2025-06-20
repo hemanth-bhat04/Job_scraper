@@ -1,0 +1,3 @@
+The voltage drop in the wire is not available to the transistors. So, you might think you’re supplying 1 volt at the pin of the IC, but the transistor inside the IC will not receive 1 volt—it will get much less. This drop is called the **worst-case voltage drop**, and it must be addressed. If the voltage drop is too high, the transistor receives less voltage, which affects its performance. As a result, the gate becomes slower than expected. When architecture engineers decide that the chip is going to operate at 1 GHz, they must account for the worst-case voltage drop. With this much voltage drop for the chosen technology, achieving 1 GHz operation becomes feasible.  
+
+Now, regarding package information

@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+They come with their own usage guidelines. Whoever handed out the memory or all these macros to you will usually provide usage guidelines along with them. PLLs (Phase-Locked Loops) are particularly notorious because they are very sensitive elements and come with a lot of restrictions. For example, they might specify that you cannot place anything within fifty microns of the edge of the PLL. They might also state that you cannot route over the PLL with any metal. Additionally, they might require that the power supply to the PLL (e.g., VDD) should not be connected to the digital supply of the rest of the chip. This means that even if the rest of the chip is running on VDD, you should not connect the PLL’s supply to the same VDD because that VDD is very noisy. If the noise couples into the PLL, it can generate clock jitter, which is undesirable.

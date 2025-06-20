@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+Until now, we have been handling only the logical part, such as a timing model, a symbol, or a behavioral model. These are all logical views. Until now, we have not touched upon the layout view, right? That is what the physical view refers to—the physical view relates to the layout of the design. Every cell used in the logical library must have a corresponding layout view. The layout tool cannot work without access to the layout data stored in the physical reference library. This data can be in either the M-W (Milky Way) format, which is a slightly older database, or the NDM (Native Design Manager) format, which is the newer one. We’ll look at NDM in a moment, but both formats contain the same information.

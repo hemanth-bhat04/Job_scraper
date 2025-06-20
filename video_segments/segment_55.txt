@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+Under `design/lib` and `lib`, you’ll see multiple directories. These are used to store your design information. The library data is stored in the distributed file system, which serves as the design library. Design libraries typically have an extension of `.nlib`, while reference libraries have an extension of `.ndm`. This is just a convention, and the extension itself has no specific meaning to the tool. You could call both types `.ndm` or both `.nlib`, and it wouldn’t affect the tool’s functionality. However, by convention, we follow this structure: if it’s a reference library, we use the extension `.ndm`, and if it’s a design library, we use the extension `.nlib`.

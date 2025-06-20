@@ -1,0 +1,1 @@
+Sure, so can you see the file I’m sharing? Is the text file visible? Alright. Okay, so this is a technology file. As you can see, it’s a text file that we can view. This file specifies things like the dielectric constant and the units, such as the timing unit (nanoseconds) and the length unit (microns).

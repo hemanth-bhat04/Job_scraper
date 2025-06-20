@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+So, the top-down flow is a flat implementation flow in the layout design. In a flat implementation flow, like in the top-down approach, everything is created at once. You start with the RTL design, then synthesize it, run pre-layout STA, implement the layout, perform post-layout STA, conduct layout verification, and finally tape out. There is no parallel processing—meaning the design is not broken down into smaller pieces, and different people are not working on separate parts simultaneously. Instead, the entire design is handled as a whole: the entire design is synthesized at once, and the entire design is laid out at once. That’s why this approach is called "flat."

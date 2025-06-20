@@ -1,0 +1,3 @@
+There is something I wanted to mention: I can’t show you the TLUPlus file because it is a binary file, and even if I opened it, there wouldn’t be anything meaningful for you to see. What you need to know now is that the TLUPlus file is generated from the ITF file. Internally, it contains tables that are very similar to the information present in the Liberty file. The tools will read the TLUPlus file and, based on that, extract the R (resistance) and C (capacitance) values for each wire in the layout. That’s about the TLUPlus file.
+
+Now, let’s move on to the design information. Design information can be obtained from the architecture engineers and the RTL engineers. So, what can the architecture...

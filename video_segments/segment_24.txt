@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+The wire length between Block 1 and Block 2 is reduced. For the communication between Block 1 and Block 3, the ports are placed in the interface so that the wire length is minimized, and so on. The port locations for the blocks, the shape of the blocks, the netlist related to that block, the constraints for the block, and the UPF (User-Defined Power Format) for the block—all of these can be exported. Once that is done, Block 1 looks like an independent design, which will be handled by different engineers. Instead of one person working on such a large chip, now six people can work on it—one block owner per block, plus one top-level engineer, totaling seven people. They all work in parallel since the blocks are much smaller. Instead of handling sixty million gates, now each engineer is handling only ten million gates. As a result, the run times are much better. Once the block engineers complete their work, ...

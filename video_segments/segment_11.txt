@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+Let’s say this is Metal 1, and this is another Metal 1. The spacing between the two Metal 1 layers depends on the width of this wire itself. That width determines how much space is required between them. If the width increases, the spacing also increases. Additionally, the spacing depends on the length of the wires. If these two metals are running parallel over a longer distance, the spacing requirement also increases.

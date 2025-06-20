@@ -1,0 +1,9 @@
+Okay, so we’ve completed the design setup. Now, let’s understand the floor plan. These are the sub-steps involved in the floor plan:  
+
+1. Place the hard macros.  
+2. Place the I/Os (or pins). If it’s a full chip, it’s pin placement; if it’s a block, it’s I/O placement.  
+3. Power planning.  
+
+After these three steps are completed, if everything looks good, we can proceed to placement.  
+
+Now, let’s discuss the data required to start the floor plan. Over the next few slides, we’ll cover a lot of new concepts, and many new terms will come up. It might feel a bit overwhelming because...

@@ -1,0 +1,3 @@
+So, these are all various terms that we will encounter. We are listing them here so that you become familiar with them. All of these terms are very important, and you will get to know them by the time you complete the project. Some of them you may already be familiar with, but the rest you will learn along the way.  
+
+Okay, so this is the basic design flow, which we have gone through earlier and understood. As we discussed earlier, there are four major steps in the design of any integrated circuit or chip: RTL design, RTL verification, synthesis, and physical design. We have touched upon some of these steps and gained a top-level understanding of what happens during RTL design and RTL verification. Are we clear?

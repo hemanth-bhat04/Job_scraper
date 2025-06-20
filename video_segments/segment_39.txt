@@ -1,0 +1,3 @@
+In a sense, if you want to generate a timing report, you open the full chip design and run the `report timing` command. It might take around forty-five minutes to generate the first timing report because the design becomes quite heavy at that point. After that, you'll run DRC (Design Rule Check), LVS (Layout Versus Schematic), and DFM (Design for Manufacturability). We'll discuss DFM later. You have to run all these checks, fix any issues that arise, and only then can you proceed to LECP (Post-Layout Static Timing Analysis). This is part of the APR (Advanced Physical Design) flow.  
+
+Now, let's move on to the first step, which is **Data Setup**. Data Setup involves loading both logical and physical information into the tool.

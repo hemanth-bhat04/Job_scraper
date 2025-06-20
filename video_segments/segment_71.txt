@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+The routing layer will contain the row spacing, which is the height of the standard cell row. Slotting and density rules are additional DRC (Design Rule Check) rules that are part of DFM (Design for Manufacturing). All of this information can be present in a tech file. Okay, let’s see—I’ll try to show an example of a tech file. Uh-huh.

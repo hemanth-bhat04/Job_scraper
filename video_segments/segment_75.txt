@@ -1,0 +1,1 @@
+For modeling, it’s a binary file, so we obviously can’t see its contents directly. However, the ITF (Interface Technology File) is a text file and can be viewed. Let me see if I can show you a TLO+ file. Uh-huh.

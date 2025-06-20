@@ -1,0 +1,7 @@
+Here’s the corrected version of your text:
+
+---
+
+When the block is "closed," it means the engineers have completed the entire flow for that block. They have fixed all the timing issues, resolved all the DRC/LVS (Design Rule Check/Layout Versus Schematic) problems, and ensured that everything is closed at that point. These blocks can then be brought back into the overall design. At this stage, you can use a timing model, such as a block extract model or an ATM (Abstract Timing Model), or you can bring back the shape of the block using LEF (Layout Exchange Format). Instead of bringing the entire block back, you only bring back the timing model and the layout model. This reduces the amount of data that needs to be handled at the top level, keeping it manageable.
+
+At the top level, you only need to close the interface timing because everything inside the block is already closed. The timing between Block 1 and Block 2, or between Block 1 and any other block, only needs to be addressed at the interface level. All internal timing within the blocks has already been resolved.

@@ -1,0 +1,5 @@
+Because all the invalid layers are present inside the standard cell, which has already been designed. The key point here is that it contains **layer-specific design rules**. Layer-specific rules refer to constraints related to a single layer, such as Metal 1. For example, the minimum width, minimum length, or minimum area for Metal 1 would be considered layer-specific because they apply only to that particular layer.
+
+In contrast, **inter-layer design rules** are the constraints between two layers. For instance, the overlap of Metal 1 with a via involves two layers, and the rule defines the relationship between them. This is an inter-layer design rule.
+
+Additionally, the design rules may also include parameters such as capacitance, resistance, and temperature coefficients for each layer.

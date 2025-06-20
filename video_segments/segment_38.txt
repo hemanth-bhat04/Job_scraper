@@ -1,0 +1,5 @@
+Certainly! Here's the corrected version of your text:
+
+---
+
+Already, it starts with the understanding that there will be multiple handoffs. The API team will not work on a single handoff. Typically, a design can have the API running for about twelve to eighteen months. Within that twelve to eighteen-month period, the netlist is likely to be handed off more than ten times. Each time, the netlist is incrementally improved, bugs are fixed, and new features may be added. All these changes keep happening. So, the netlist we have today, which we are going to work on for the project, is not the final netlist. It is intentionally designed this way because if you had a netlist where everything was already fixed, there would be nothing left for you to learn. Most of the learning in the design happens during the initial phases.

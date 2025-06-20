@@ -1,0 +1,1 @@
+The spacing rule is not a constant number; it changes depending on the context, and that is what is shown here. This fat table rule specifies the variation, and this appears to represent the X-axis and Y-axis values in the table. Similarly, you’ll see rules for other layers, and this information is presented in a specific format that the tool can interpret. Okay?

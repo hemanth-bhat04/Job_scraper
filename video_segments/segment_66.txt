@@ -1,0 +1,3 @@
+We know that the API (Application Programming Interface) tool requires many inputs, and there is a specific way of supplying those inputs to the tool. These inputs could be TCL scripts, application variables, or other formats. Some examples of this were already seen when we worked with the Design Compiler tool. For instance, files like `dc_setup.tcl` and `common_setup.tcl` contained setup information. A similar approach is required here as well.  
+
+The tool requests a gateway and, at a minimum, requires logical libraries related to standard cells, I/O cells, and memories. It also needs timing scenarios and other details, which collectively constitute the logical data. In addition to this, API tools also require...

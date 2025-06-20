@@ -1,0 +1,5 @@
+A container for the design data is created when you read the Verilog netlist. For example, the block labeled "Block A" can be created when you load the Verilog netlist into your layout. The block is automatically generated during this process.
+
+A **design library** is a collection of blocks, technology data, and links to technology libraries. A **technology library** contains information about standard cells, macro cells, I/Os, and other blocks used in the current design. 
+
+This reference library may also include references to other blocks. For instance, if you designed a block labeled "Block B" for another chip and want to reuse it as one of the blocks in the current design, then Block B itself can become part of the reference library.

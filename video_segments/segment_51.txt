@@ -1,0 +1,7 @@
+Here’s the corrected version of your text:
+
+---
+
+In many, many thousands of combinations, it’s practically impossible to check all the possibilities. It’s possible that in your layout, some unusual way of placing components could introduce a new design violation. That’s why checking all the layers after the APR (Automatic Place and Route) layout is completed is essential. Without passing DRC (Design Rule Check) and LVS (Layout Versus Schematic) at that stage, you are not allowed to tape out. 
+
+API (Automated Place and Route) tools also perform DRC and LVS checks internally, but their knowledge of DRC rules is primarily related to the metal layers. An API tool is designed for automatic placement and routing, so the routing is entirely done using metal layers. When the tool creates the routing, it is expected to generate routes in such a way that no violations occur.

@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+So, all those scenarios are still ongoing. When you are working on the project, your job is to identify and address all the issues, making the necessary fixes so that we can move to the next step. Many times, certain fixes may not be possible—for example, the layout team might not be able to resolve every issue. Let’s say there is a timing issue involving a very deep data path; that is something the layout team cannot fix. What the layout team can do is ensure that those cells are placed as close together as possible to reduce path delays as much as possible. Beyond that, the layout team may not be able to do anything else. However, a layout engineer should be able to differentiate between whether the failure is due to the layout itself or another factor.

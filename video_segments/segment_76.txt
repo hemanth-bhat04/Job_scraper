@@ -1,0 +1,5 @@
+Here’s the corrected version of your text:
+
+---
+
+So, creating all of this—like placing all the memories, creating all the I/Os, and coming up with the power network—all of this is part of the floor plan. However, placing the standard cells in the middle is not included in this step; that will be handled in the next step. Now, what about the hierarchical implementation flow? In a hierarchical implementation flow, we start with a full RTL design and then proceed to design partitioning. We haven’t really talked about design partitioning yet, so we’ll cover that later. Until now, we’ve been discussing the bottom-up synthesis process, but design partitioning is a key part of that.

@@ -1,0 +1,7 @@
+To hear a lot of things at once, so listen carefully. The data required for starting the floor plan can be categorized under the following groups. To create a good floor plan, you need a lot of information, and all of that information must be studied, processed, and analyzed before you can create the floor plan. It is organized into the following categories:
+
+- **Data coming from technology**: You can obtain information from the architecture, design engineers, or RTL engineers.
+- **Information from I/Os**: You need details about the I/O interfaces.
+- **Information from IC packages**: You require data related to the packaging specifications.
+
+All of this information, when combined, will help you determine the requirements for creating an effective floor plan.
