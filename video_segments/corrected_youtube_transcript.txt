@@ -1,0 +1,3 @@
+Here is the corrected transcript:
+
+Hello students, in this video, we are going to learn about the introduction of the RTL design process [Music]. In our previous video, we learned about five different modules. So far, in this course, we have completed five chapters, and this is the sixth chapter, which is named "RTL Design Process." So, in this unit, we will be learning about certain case studies, and these case studies will be designed by using RTL design. This RTL is nothing but the full form of Register Transfer Logic. So, this will be coming under one type of modeling, which is data flow modeling. Register transfer logic or data flow modeling means certain data flows, and you will be doing certain operations.

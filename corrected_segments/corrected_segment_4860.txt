@@ -1,0 +1,1 @@
+{"content":"so have and you your or gate output first case it is zero rest all it is one now let us implement this using the two inputs are to one max so if i consider a inputs are to one max over here these are the inputs this is zero input this is one the select pin is here this is my white this is two are to one max so how do we go about this so this is my select"}

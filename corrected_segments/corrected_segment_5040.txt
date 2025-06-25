@@ -1,0 +1,1 @@
+{"content":"so, you know the working of the mux when select pin is equal to zero, whatever is in this line is transmitted to the output, select pin is equal to zero means a is equal to zero, from the truth table, you see, when a is equal to zero, what is your output."}

@@ -3,66 +3,77 @@ import json
 import os
 
 # ====== CONFIG ======
-TRANSCRIPT_PATH = "D:/Job scraper/Job_scraper/video_segments/segment_1.txt"  # Your 1-min transcript file
-API_KEY = "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"  # Replace with your OpenRouter API key
-MODEL = "deepseek/deepseek-r1-0528:free"
+TRANSCRIPT_PATH = "video_segments/design_of_mux.txt"
+API_KEY = "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"
+MODEL = "meta-llama/llama-3.1-8b-instruct:free"
 
 # ====== LOAD RAW TRANSCRIPT ======
 with open(TRANSCRIPT_PATH, "r", encoding="utf-8") as f:
     raw_text = f.read().strip()
 
-# ====== PREPARE PROMPT ======
-prompt = (
-    "You are an expert language editor for technical transcripts. "
-    "Correct the grammar, punctuation, sentence flow, and casing in the following transcript. "
-    "Do not change or expand any technical terms, acronyms, or numeric values. "
-    "Return only the corrected transcript text. Do not include any explanations, notes, or introductory phrases.\n\n"
-    f"{raw_text}"
+# ====== STRONG PROMPT INSTRUCTIONS ======
+system_message = (
+    "You are a strict grammar correction engine. "
+    "Fix only grammar, punctuation, and sentence structure. "
+    "Do not change acronyms, technical terms, or numbers. "
+    "Very stricty-Return ONLY the corrected transcript — no explanations, no headings, no notes."
 )
 
-# ====== SEND REQUEST TO OPENROUTER ======
+user_prompt = (
+    "Correct the following transcript text. "
+    "Fix only grammar, punctuation, and sentence flow. "
+    "Do not touch acronyms, numbers, or domain-specific words." 
+    "Return only the corrected version. Do not say 'Here is the corrected text' or anything else.\n\n"
+    + raw_text
+)
+
+# ====== HEADERS & PAYLOAD ======
 headers = {
     "Authorization": f"Bearer {API_KEY}",
-    "Content-Type": "application/json",
-    "HTTP-Referer": "https://yourprojectdomain.com",  # Optional
-    "X-Title": "TranscriptCleaner",                   # Optional
+    "Content-Type": "application/json"
 }
 
 payload = {
     "model": MODEL,
     "messages": [
-        {
-            "role": "system",
-            "content": "You are a strict grammar editor for technical transcripts. Output only the corrected text—no explanations, no headings, no filler."
-        },
-        {
-            "role": "user",
-            "content": prompt
-        }
+        {"role": "system", "content": system_message},
+        {"role": "user", "content": user_prompt}
     ]
 }
 
-response = requests.post(
-    url="https://openrouter.ai/api/v1/chat/completions",
-    headers=headers,
-    data=json.dumps(payload)
-)
-
-# ====== HANDLE RESPONSE ======
-if response.status_code == 200:
-    result = response.json()
-    corrected = result["choices"][0]["message"]["content"].strip()
-
-    # Build clean filename in same folder
-    corrected_filename = os.path.join(
-        os.path.dirname(TRANSCRIPT_PATH),
-        "corrected_" + os.path.basename(TRANSCRIPT_PATH)
+# ====== API REQUEST & SAFE RESPONSE HANDLING ======
+try:
+    response = requests.post(
+        url="https://openrouter.ai/api/v1/chat/completions",
+        headers=headers,
+        data=json.dumps(payload),
+        timeout=60  # seconds
     )
 
-    with open(corrected_filename, "w", encoding="utf-8") as f:
-        f.write(corrected)
+    # DEBUG LOG
+    print(f"Response Code: {response.status_code}")
 
-    print(f"\n✅ Corrected transcript saved to:\n{corrected_filename}\n")
-else:
-    print("❌ Error:", response.status_code)
-    print(response.text)
+    if response.status_code == 200:
+        try:
+            result = response.json()
+            corrected = result["choices"][0]["message"]["content"].strip()
+
+            corrected_filename = os.path.join(
+                os.path.dirname(TRANSCRIPT_PATH),
+                "corrected_" + os.path.basename(TRANSCRIPT_PATH)
+            )
+
+            with open(corrected_filename, "w", encoding="utf-8") as f:
+                f.write(corrected)
+
+            print(f"\n✅ Corrected transcript saved to:\n{corrected_filename}\n")
+        except (json.JSONDecodeError, KeyError) as e:
+            print("❌ Failed to parse model response.")
+            print("Raw response:\n", response.text)
+    else:
+        print(f"❌ API Error {response.status_code}:")
+        print(response.text)
+
+except requests.exceptions.RequestException as e:
+    print("❌ Network/API error occurred:")
+    print(str(e))
