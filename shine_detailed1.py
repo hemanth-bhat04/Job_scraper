@@ -15,13 +15,24 @@ HEADERS = {
     'Referer': 'https://www.shine.com/'
 }
 
+# Configure session for persistent connections
+session = requests.Session()
+session.headers.update(HEADERS)
+
 def scrape_job_details(job_url):
     """Scrape detailed information from individual job page"""
     try:
-        response = requests.get(job_url, headers=HEADERS)
+        # Added initial delay before detail page request
+        time.sleep(random.uniform(2, 5))
+        
+        response = session.get(job_url, timeout=15)
         if response.status_code != 200:
             print(f"Failed to fetch job details: {job_url}")
+            time.sleep(random.uniform(10, 15))  # Longer delay after failure
             return {}
+        
+        # Additional delay after successful request
+        time.sleep(random.uniform(1, 3))
         
         soup = BeautifulSoup(response.text, 'html.parser')
         details = {}
@@ -68,6 +79,7 @@ def scrape_job_details(job_url):
     
     except Exception as e:
         print(f"Error scraping job details {job_url}: {str(e)}")
+        time.sleep(random.uniform(15, 20))  # Extended delay after error
         return {}
 
 def scrape_job_card(card):
@@ -136,22 +148,31 @@ def scrape_page(url, page_num, retries=3):
             paginated_url = f"{url}&page={page_num}"
             print(f"Scraping page {page_num} (attempt {attempt + 1}): {paginated_url}")
             
-            response = requests.get(paginated_url, headers=HEADERS)
+            # Random delay before page request
+            time.sleep(random.uniform(5, 10))
+            
+            response = session.get(paginated_url, timeout=20)
             
             if response.status_code == 429:
-                print("Rate limited. Increasing delay...")
-                time.sleep(30)  # Wait longer if rate limited
+                wait_time = 30 * (attempt + 1)  # Exponential backoff
+                print(f"Rate limited. Waiting {wait_time} seconds...")
+                time.sleep(wait_time)
                 continue
                 
             if response.status_code != 200:
                 print(f"Failed to fetch page {page_num}. Status code: {response.status_code}")
+                time.sleep(random.uniform(15, 20))  # Longer delay after failure
                 return None
+            
+            # Random delay after successful page load
+            time.sleep(random.uniform(3, 6))
             
             soup = BeautifulSoup(response.text, 'html.parser')
             job_cards = soup.find_all('div', class_='jobCardNova_bigCard__W2xn3')
             
             if not job_cards:
                 print(f"No job cards found on page {page_num}")
+                time.sleep(random.uniform(5, 8))  # Delay when no cards found
                 return None
             
             jobs = []
@@ -159,7 +180,7 @@ def scrape_page(url, page_num, retries=3):
                 job = scrape_job_card(card)
                 if job and job.get('URL'):
                     # Scrape detailed information from individual job page
-                    time.sleep(random.uniform(1, 3))  # Be polite between detail page requests
+                    time.sleep(random.uniform(3, 6))  # Increased delay between detail page requests
                     details = scrape_job_details(job['URL'])
                     job.update(details)
                     jobs.append(job)
@@ -169,7 +190,9 @@ def scrape_page(url, page_num, retries=3):
         except Exception as e:
             print(f"Error scraping page {page_num} (attempt {attempt + 1}): {str(e)}")
             if attempt < retries - 1:
-                time.sleep(10)  # Wait longer between retries
+                wait_time = 15 * (attempt + 1)  # Exponential backoff
+                print(f"Waiting {wait_time} seconds before retry...")
+                time.sleep(wait_time)
             else:
                 return None
 
@@ -189,11 +212,13 @@ def scrape_shine_jobs(base_url, max_pages=100, target_jobs=1000, details_percent
         if not jobs:
             duplicate_count += 1
             print(f"No jobs found on page {page_num} (duplicate count: {duplicate_count})")
+            time.sleep(random.uniform(10, 15))  # Increased delay when no jobs found
         else:
             # Check if this page is a duplicate of the previous one
             if all_jobs and all(job in all_jobs[-len(jobs):] for job in jobs):
                 duplicate_count += 1
                 print(f"Duplicate page detected ({duplicate_count}/{max_duplicates})")
+                time.sleep(random.uniform(20, 30))  # Extended delay for duplicate pages
             else:
                 duplicate_count = 0
                 all_jobs.extend(jobs)
@@ -205,9 +230,11 @@ def scrape_shine_jobs(base_url, max_pages=100, target_jobs=1000, details_percent
             checkpoint_file = f"shine_jobs_data/checkpoint_page_{page_num}.csv"
             save_to_csv(all_jobs, checkpoint_file)
             print(f"Saved checkpoint at page {page_num}")
+            time.sleep(random.uniform(10, 15))  # Delay after saving checkpoint
         
-        # Random delay to avoid being blocked
-        delay = random.uniform(3, 8)
+        # Random delay to avoid being blocked - increased range
+        delay = random.uniform(10, 20)
+        print(f"Waiting {delay:.1f} seconds before next page...")
         time.sleep(delay)
         page_num += 1
     
@@ -239,10 +266,14 @@ if __name__ == "__main__":
     
     print("Starting Shine.com job scraping with detailed information...")
     
+    # Initial delay before starting
+    print("Initializing... waiting 10 seconds before starting")
+    time.sleep(10)
+    
     jobs_data = scrape_shine_jobs(
         target_url, 
-        max_pages=100,
-        target_jobs=1000
+        max_pages=500,
+        target_jobs=25000
     )
     
     if jobs_data:
